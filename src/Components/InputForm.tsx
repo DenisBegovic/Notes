@@ -2,14 +2,14 @@
 import { useState } from "react";
 
 
-export default function InputForm({ handleSubmit }) {
+export default function InputForm({ handleSubmitEvent }) {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
 
 
     return <form className="form" onSubmit={(event) => {
         event.preventDefault();
-        handleSubmit(title, content);
+        handleSubmitEvent(title, content)
         setTitle("");
         setContent("");
     }}>
