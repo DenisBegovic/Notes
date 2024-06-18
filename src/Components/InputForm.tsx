@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 
-export default function InputForm({ handleSubmitEvent }) {
+export default function InputForm({ handleSubmitEvent }: any) {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
 

@@ -1,6 +1,7 @@
 'use client'
 import { useState } from "react";
 import deleteNote from "@/app/notes/deleteNote";
+import EditNoteButton from "./Edit";
 
 
 export default function Note({ note }: any) {
@@ -13,5 +14,6 @@ export default function Note({ note }: any) {
         <hr></hr>
         <p>{content}</p>
         {mouseIsOver && <button className="delete-btn" onClick={() => { deleteNote(id) }}>Delete</button>}
+        {mouseIsOver && <EditNoteButton noteID={id} />}
     </div>
 }

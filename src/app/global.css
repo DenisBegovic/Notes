@@ -120,9 +120,29 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    align-self: center;
+}
+
+.edit-form>textarea {
+    min-width: 400px;
+    min-height: 300px;
+    font-size: xx-large;
+}
+
+.edit-form>input {
+    min-width: 50px;
+    min-height: 30px;
+    font-size: xx-large;
+    text-align: center;
+}
 
 .footer {
     display: flex;

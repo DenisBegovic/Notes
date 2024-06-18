@@ -1,8 +1,5 @@
-"use server";
-
-import plus from "../../../public/plus.svg";
 import Note from "../../Components/Note";
-import SubmitForm from "../../Components/InputForm";
+import NoteForm from "../../Components/InputForm";
 import PocketBase from "pocketbase";
 
 async function getNotes() {
@@ -18,9 +15,6 @@ async function addNote(title: string, content: string) {
     console.log(record);
 }
 
-async function deleteNote() {
-
-}
 
 
 export default async function NotesPage() {
@@ -38,7 +32,7 @@ export default async function NotesPage() {
                 return <Note key={note.id} note={note} />
             })}
         </div>
-        <SubmitForm handleSubmitEvent={collectFormData} />
+        <NoteForm handleSubmitEvent={collectFormData} />
     </div>
 }
 
