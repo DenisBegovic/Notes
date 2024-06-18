@@ -1,4 +1,4 @@
-import NavBarComponent from "./NavBarComponent"
+import NavBarComponent from "../Components/NavBarComponent"
 import "./global.css";
 
 export const metadata = {
@@ -14,21 +14,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <nav className="">
-          <h1 className="nav-component">NotesApp</h1>
-          <div className="nav-links">
+        <nav className="navbar">
+          <h1 className="title">NotesApp</h1>
+          <div className="nav-components">
             <NavBarComponent title="Home" link="/" />
             <NavBarComponent title="Notes" link="/notes" />
             <NavBarComponent title="Random" link="/random" />
           </div>
         </nav>
-        <div id="page-container">
-          <div id="content-wrap">
+        <div className="main">
+          <div className="page">
             {children}
           </div>
-            <footer id='footer'>
-              <h3>Made with caffeine and questionable coding practices</h3>
-            </footer>
+          <footer className="footer">
+            <h3>Made with caffeine and questionable coding practices</h3>
+          </footer>
         </div>
       </body>
     </html>
