@@ -15,21 +15,27 @@ async function addNote(title: string, content: string) {
     console.log(record);
 }
 
+async function deleteNote(noteID: string) {
+    "use server";
+    console.log(noteID);
+    const pb = new PocketBase("http://127.0.0.1:8090");
+    const res = await pb.collection("notes").delete(noteID);
+    console.log(res);
+}
 
+async function collectFormData(title: string, content: string) {
+    "use server";
+    addNote(title, content);
+}
 
 export default async function NotesPage() {
     const data = await getNotes();
-
-    async function collectFormData(title: string, content: string) {
-        "use server";
-        addNote(title, content);
-    }
 
     return <div className="children">
         <h1>Notes</h1>
         <div className="notes-area">
             {data?.map((note) => {
-                return <Note key={note.id} note={note} />
+                return <Note key={note.id} note={note} deleteNote={deleteNote} />
             })}
         </div>
         <NoteForm handleSubmitEvent={collectFormData} />
