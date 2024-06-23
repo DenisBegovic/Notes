@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <nav className="navbar">
-          <h1 className="title">NotesApp</h1>
+          <h1 className="title">&#x3C;NotesApp/&#x3E;</h1>
           <div className="nav-components">
             <NavBarComponent title="Home" link="/" />
             <NavBarComponent title="Notes" link="/notes" />
@@ -27,7 +27,7 @@ export default function RootLayout({
             {children}
           </div>
         </div>
-        <footer className="footer">
+        <footer>
           <h3>Made with caffeine and questionable coding practices</h3>
         </footer>
       </body>

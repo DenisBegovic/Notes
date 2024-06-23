@@ -12,9 +12,7 @@ async function addNote(title: string, content: string) {
     const data = { title, content };
     const pb = new PocketBase("http://127.0.0.1:8090");
     const record = await pb.collection('notes').create(data);
-    console.log(record);
 }
-
 
 
 export default async function NotesPage() {
