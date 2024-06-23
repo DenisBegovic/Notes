@@ -123,13 +123,40 @@ body {
     max-height: 800px;
 }
 
-.form {
-    max-width: 500px;
+.add-note-form {
     align-self: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    min-width: 400px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0 15px 15px 15px;
+    padding: 10px;
+    margin: 20px;
+
+}
+
+.add-note-form>input {
+    border: none;
+    height: 30px;
+    min-width: 80%;
+    font-size: x-large;
+    outline: 0;
+}
+
+.add-note-form>textarea {
+    border: none;
+    border-top: 2px dashed rgba(0, 0, 0, 0.1);
+    resize: none;
+    min-width: 80%;
+    min-height: 80px;
+    outline: 0;
+}
+
+.add-note-form>button {
+    width: fit-content;
+    margin-top: 5px;
 }
 
 .edit-form {

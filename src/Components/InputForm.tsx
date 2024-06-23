@@ -7,17 +7,16 @@ export default function InputForm({ handleSubmitEvent }: any) {
     const [content, setContent] = useState("");
     const router = useRouter();
 
-    return <form className="form" onSubmit={(event) => {
+    return <form className="add-note-form" onSubmit={(event) => {
         event.preventDefault();
         handleSubmitEvent(title, content);
         router.refresh();
         setTitle("");
         setContent("");
     }}>
-        <label>Note title:</label>
-        <input type="text" value={title} onChange={(event) => { setTitle(event.target.value) }} />
-        <label>Note content</label>
+        <input type="text" value={title} onChange={(event) => { setTitle(event.target.value) }} placeholder="Title" required />
+
         <textarea value={content} onChange={(event) => { setContent(event.target.value) }}></textarea>
-        <button type="submit">Submit</button>
+        <button type="submit">Create new note</button>
     </form>
 }
