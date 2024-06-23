@@ -15,6 +15,8 @@ async function addNote(title: string, content: string) {
 }
 
 
+
+
 export default async function NotesPage() {
     const data = await getNotes();
 
@@ -33,7 +35,3 @@ export default async function NotesPage() {
         <NoteForm handleSubmitEvent={collectFormData} />
     </div>
 }
-
-
-
-
