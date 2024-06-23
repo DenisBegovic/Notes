@@ -1,15 +1,16 @@
 "use client";
 import { useState } from "react";
-
+import { useRouter } from 'next/navigation';
 
 export default function InputForm({ handleSubmitEvent }: any) {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
-
+    const router = useRouter();
 
     return <form className="form" onSubmit={(event) => {
         event.preventDefault();
-        handleSubmitEvent(title, content)
+        handleSubmitEvent(title, content);
+        router.refresh();
         setTitle("");
         setContent("");
     }}>
