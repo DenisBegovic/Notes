@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <nav className="navbar">
-          <h1 className="title">NotesApp</h1>
+          <h1 className="title">&#x3C;NoteToSelf /&#x3E;</h1>
           <div className="nav-components">
             <NavBarComponent title="Home" link="/" />
             <NavBarComponent title="Notes" link="/notes" />
