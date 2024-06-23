@@ -10,10 +10,13 @@ export default function Note({ note }: any) {
     const { id, title, content, created } = note || {};
 
     return <div className="card" onMouseOver={() => setMouseIsOver(true)} onMouseLeave={() => setMouseIsOver(false)}>
-        <h3>{title}</h3>
+        <div className="title-area">
+            <h3>{title}</h3>
+            {mouseIsOver && <button className="delete-btn" onClick={() => { deleteNote(id) }}>Delete</button>}
+        </div>
+
         <hr></hr>
         <p>{content}</p>
-        {mouseIsOver && <button className="delete-btn" onClick={() => { deleteNote(id) }}>Delete</button>}
         {mouseIsOver && <EditNoteButton noteID={id} />}
     </div>
 }
