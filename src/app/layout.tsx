@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <nav className="navbar">
-          <h1 className="title">&#x3C;NotesApp/&#x3E;</h1>
+          <h1 className="title">&#x3C;NoteToSelf /&#x3E;</h1>
           <div className="nav-components">
             <NavBarComponent title="Home" link="/" />
             <NavBarComponent title="Notes" link="/notes" />
@@ -26,10 +26,10 @@ export default function RootLayout({
           <div className="page">
             {children}
           </div>
+          <footer className="footer">
+            <h3>Made with caffeine and questionable coding practices</h3>
+          </footer>
         </div>
-        <footer>
-          <h3>Made with caffeine and questionable coding practices</h3>
-        </footer>
       </body>
     </html>
   )
