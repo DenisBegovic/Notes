@@ -26,10 +26,10 @@ export default function RootLayout({
           <div className="page">
             {children}
           </div>
-          <footer className="footer">
-            <h3>Made with caffeine and questionable coding practices</h3>
-          </footer>
         </div>
+        <footer>
+          <h3>Made with caffeine and questionable coding practices</h3>
+        </footer>
       </body>
     </html>
   )
