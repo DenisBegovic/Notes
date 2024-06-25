@@ -27,6 +27,15 @@ async function collectFormData(title: string, content: string) {
     addNote(title, content);
 }
 
+async function editNote(title: string, content: string, id: string) {
+    "use server";
+    const pb = new PocketBase('http://127.0.0.1:8090');
+    const result = await pb.collection("notes").update(id, {
+        title,
+        content
+    });
+    console.log(result);
+}
 
 export default async function NotesPage() {
     const data = await getNotes();
@@ -35,7 +44,7 @@ export default async function NotesPage() {
         <h1>Notes</h1>
         <div className="notes-area">
             {data?.map((note) => {
-                return <Note key={note.id} note={note} deleteNote={deleteNote} />
+                return <Note key={note.id} note={note} deleteNote={deleteNote} editNote={editNote} />
             })}
         </div>
         <NoteForm handleSubmitEvent={collectFormData} />

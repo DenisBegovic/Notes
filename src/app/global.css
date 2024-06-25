@@ -11,6 +11,8 @@ body {
     flex-direction: column;
 }
 
+
+/* Layout */
 .navbar {
     background-color: white;
     margin: 0;
@@ -44,6 +46,8 @@ body {
     min-width: 70%;
 }
 
+/* Pages */
+
 .children {
     display: flex;
     flex-direction: column;
@@ -67,6 +71,15 @@ body {
     background-color: white;
 }
 
+.card textarea {
+    margin: 0;
+    border: 0;
+    display: block;
+    width: fit-content;
+    resize: none;
+    scrollbar-width: 5px;
+}
+
 .title-area {
     margin: 5px;
     display: flex;
@@ -79,16 +92,20 @@ body {
     flex-direction: row;
 }
 
-.title-area h3 {
-    margin: 0;
+.title-area .title {
+    font-size: large;
+    max-width: min-content;
+    height: 20px;
 }
 
-.card p {
+.card .content {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 0.8rem;
     margin-top: 0;
     overflow-wrap: break-word;
+    min-width: fit-content;
+    min-height: fit-content;
 }
 
 .title-area .edit {
@@ -133,7 +150,6 @@ body {
     display: flex;
     justify-content: space-between;
     margin: 5px;
-
 }
 
 .title-area>.delete-btn {

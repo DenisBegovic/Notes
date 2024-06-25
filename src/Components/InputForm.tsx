@@ -9,14 +9,14 @@ export default function InputForm({ handleSubmitEvent }: any) {
 
     return <form className="add-note-form" onSubmit={(event) => {
         event.preventDefault();
-        handleSubmitEvent(title, content);
+        handleSubmitEvent(title == "" ? "Untitled" : title, content);
         router.refresh();
         setTitle("");
         setContent("");
     }}>
-        <input type="text" value={title} onChange={(event) => { setTitle(event.target.value) }} placeholder="Title" required />
+        <input spellCheck="false" type="text" value={title} onChange={(event) => { setTitle(event.target.value) }} placeholder="Title" />
 
-        <textarea value={content} onChange={(event) => { setContent(event.target.value) }}></textarea>
+        <textarea spellCheck="false" value={content} onChange={(event) => { setContent(event.target.value) }}></textarea>
         <button type="submit">Create new note</button>
     </form>
 }
