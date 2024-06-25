@@ -1,0 +1,53 @@
+.form {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 400px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0 15px 15px 15px;
+    padding: 10px;
+    margin: 20px;
+
+}
+
+.title {
+    border: none;
+    height: 30px;
+    min-width: 80%;
+    font-size: x-large;
+    outline: 0;
+}
+
+.content {
+    border: none;
+    border-top: 2px dashed rgba(0, 0, 0, 0.1);
+    resize: none;
+    min-width: 80%;
+    min-height: 80px;
+    outline: 0;
+}
+
+.submitButton {
+    width: fit-content;
+    margin-top: 5px;
+    background-color: white;
+    color: black;
+    font-weight: 700;
+    font-style: italic;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@keyframes changeColor {
+    to {
+        background-color: rgb(255, 183, 48);
+    }
+}
+
+.submitButton:hover {
+    animation-name: changeColor;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
