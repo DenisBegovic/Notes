@@ -1,6 +1,5 @@
 'use client'
 import { useState } from "react";
-import EditNoteButton from "./Edit";
 import { useRouter } from 'next/navigation';
 
 type Note = {
@@ -25,11 +24,14 @@ export default function Note({ note, deleteNote }: { note: Note, deleteNote: Del
 
     return <div className="card" onMouseOver={() => setMouseIsOver(true)} onMouseLeave={() => setMouseIsOver(false)}>
         <div className="title-area">
-            <h3>{title}</h3>
-            {mouseIsOver && <button className="delete-btn" onClick={() => { handleClick(id) }}>Delete</button>}
+            <div>
+                <h3>{title}</h3>
+                <p className="edit" onClick={() => { router.push(`/notes/${id}`) }}>Edit</p>
+            </div>
+            <button className="delete-btn" onClick={() => { handleClick(id) }}>Delete</button>
+            {/* {mouseIsOver && <button className="delete-btn" onClick={() => { handleClick(id) }}>Delete</button>} */}
         </div>
         <hr></hr>
         <p>{content}</p>
-        {mouseIsOver && <EditNoteButton noteID={id} />}
     </div>
 }
